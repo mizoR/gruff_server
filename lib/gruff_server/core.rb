@@ -22,7 +22,7 @@ module GruffServer
         end
       end
 
-      base.get %r{^/graphs/([a-zA-Z0-9]+)\.(jpg)$} do |hashed, ext|
+      base.get %r{^/graphs/([a-zA-Z0-9]+)\.(png|jpg|gif)$} do |hashed, ext|
         content_type ext
         send_file saved_pathname(hashed, ext)
       end
